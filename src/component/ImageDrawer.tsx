@@ -10,7 +10,7 @@ import {
 import { RotateLeft, RotateRight, Flip } from '@mui/icons-material';
 import Cropper from 'react-easy-crop';
 import { getCroppedImg } from '../utils/cropImage';
-import type { Image } from '../App';
+import type { Image } from '../types';
 
 type ImageDrawerProps = {
   open: boolean;
