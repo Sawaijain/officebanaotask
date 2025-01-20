@@ -217,7 +217,7 @@ function ImageDrawer({ open, image, onClose, onUpdate, onDelete }: ImageDrawerPr
             onChange={(e) => setDescription(e.target.value)}
           />
 
-          <Box display="flex" justifyContent="space-around" mt={2}>
+          <Box display="flex" style={{flexWrap:"wrap"}} justifyContent="space-around" mt={2}>
             <IconButton color="primary" onClick={() => handleRotation(-90)}>
               <RotateLeft />
             </IconButton>
@@ -235,12 +235,12 @@ function ImageDrawer({ open, image, onClose, onUpdate, onDelete }: ImageDrawerPr
             </IconButton>
           </Box>
 
-          <Box display="flex" justifyContent="space-between" mt={2}>
+          <Box display="flex" style={{flexWrap:"wrap"}} justifyContent="space-between" mt={2}>
             <Button
               variant="outlined"
               color="secondary"
               onClick={handleDelete}
-              style={{ width: '48%' }}
+              style={{ width: '48%',marginBottom:"3px" }}
             >
               Delete
             </Button>
@@ -250,7 +250,7 @@ function ImageDrawer({ open, image, onClose, onUpdate, onDelete }: ImageDrawerPr
               onClick={handleSave}
               style={{ width: '48%' }}
             >
-              Save Changes
+              Save 
             </Button>
           </Box>
         </Box>
