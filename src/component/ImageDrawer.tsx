@@ -130,6 +130,18 @@ function ImageDrawer({ open, image, onClose, onUpdate, onDelete }: ImageDrawerPr
     }
   };
 
+  const handleReplaceImage = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const newImageUrl = URL.createObjectURL(file);
+      if (editImage) {
+        const updatedImage = { ...editImage, url: newImageUrl };
+        setEditImage(updatedImage);
+        onUpdate(updatedImage);
+      }
+    }
+  };
+
   return (
 
     <Drawer anchor="right" open={open} onClose={onClose}
@@ -253,6 +265,20 @@ function ImageDrawer({ open, image, onClose, onUpdate, onDelete }: ImageDrawerPr
               Save 
             </Button>
           </Box>
+          <Button
+              variant="outlined"
+              color="primary"
+              component="label"
+              style={{ width: '100%' }}
+            >
+              Replace Image
+              <input
+                type="file"
+                hidden
+                accept="image/*"
+                onChange={handleReplaceImage}
+              />
+            </Button>
         </Box>
       </Box>
     </Drawer>
