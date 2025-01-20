@@ -82,7 +82,7 @@ function App() {
               style={{ backgroundColor: "#334D6E" }}
             >
               + Add
-              <input type="file" hidden onChange={handleImageUpload} />
+              <input type="file" hidden accept="image/*" onChange={handleImageUpload} />
             </Button>
           </Box>
           <Box marginTop={10}>
